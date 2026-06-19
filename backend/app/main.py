@@ -1,6 +1,9 @@
+import logging
 from pathlib import Path
 
 from fastapi import FastAPI
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(name)s: %(message)s")
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles

@@ -38,9 +38,9 @@ def chat(
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db),
 ):
-    if not settings.vertex_enabled or not settings.gemini_api_key:
+    if not (settings.gemini_api_key or settings.google_api_key):
         return ChatResponse(
-            reply="AI is not configured. Set GEMINI_API_KEY in docker-compose.yml and restart."
+            reply="AI is not configured. Set GEMINI_API_KEY in the backend .env and restart."
         )
 
     context = (
