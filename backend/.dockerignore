@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+expense_dashboard.db
+uploads/*
+!uploads/receipts/
+!uploads/receipts/.gitkeep

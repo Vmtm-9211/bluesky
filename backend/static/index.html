@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Expense Tracking Dashboard</title>
+    <script type="module" crossorigin src="/assets/index-DrVEozWT.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C1XSrmwe.css">
+  </head>
+  <body>
+    <div
+      id="root"
+      style="min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;background:#f5f7f8;color:#17202a;"
+    >
+      <div style="max-width:520px;padding:24px;border:1px solid #d8dee4;border-radius:8px;background:white;">
+        <h1 style="margin:0 0 8px;font-size:22px;">Company Expense Tracking Dashboard</h1>
+        <p style="margin:0;color:#57606a;">Loading application...</p>
+      </div>
+    </div>
+    <script>
+      window.showStartupError = function (message) {
+        var root = document.getElementById("root");
+        if (!root) return;
+        root.innerHTML =
+          '<div style="max-width:720px;padding:24px;border:1px solid #f0b8b8;border-radius:8px;background:#fff;color:#17202a;font-family:Arial,sans-serif;">' +
+          '<h1 style="margin:0 0 8px;font-size:22px;color:#b42318;">Frontend startup error</h1>' +
+          '<p style="margin:0 0 12px;color:#57606a;">React could not start. Error:</p>' +
+          '<pre style="white-space:pre-wrap;background:#f6f8fa;padding:12px;border-radius:6px;">' +
+          String(message).replace(/[<>&]/g, function (c) {
+            return { "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c];
+          }) +
+          "</pre>" +
+          '<button onclick="localStorage.clear();location.reload();" style="padding:10px 14px;border:0;border-radius:6px;background:#008c95;color:white;font-weight:700;">Clear session and reload</button>' +
+          "</div>";
+      };
+      window.addEventListener("error", function (event) {
+        window.showStartupError(event.message || "Unknown JavaScript error");
+      });
+      window.addEventListener("unhandledrejection", function (event) {
+        window.showStartupError((event.reason && (event.reason.stack || event.reason.message)) || event.reason || "Unhandled promise rejection");
+      });
+    </script>
+  </body>
+</html>
